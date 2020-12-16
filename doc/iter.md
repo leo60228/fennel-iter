@@ -62,7 +62,7 @@ Function signature:
 (map pred iter inv startControl)
 ```
 
-Map an iterator. For example, to double each element: `(map #(* $ 2) iter)`
+Map an iterator, skipping nil values. For example, to double each element: `(map #(* $ 2) iter)`
 
 
 ---
