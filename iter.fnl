@@ -34,10 +34,9 @@
 
 (fn foldl [pred state iter inv control]
   "Applies a left fold to an iterator. For example, to sum an iterator: `(foldl (fn [a x] (+ a x)) 0 iter)`"
-  (let [(control value) (iter inv control)]
-    (if (= value nil)
-        state
-        (foldl pred (pred state value) iter inv control))))
+  (match (iter inv control)
+    (_ nil) state
+    (newControl value) (foldl pred (pred state value) iter inv newControl)))
 
 {:_DESCRIPTION "Tiny lazy iterator library for Fennel. This library defines an iterator as a function that takes a fixed argument and a state, and returns a new state and an element. This is a subset of what Fennel's `each` and Lua's `for` accept, and matches the return value of `ipairs`."
  :_LICENSE "MIT"
