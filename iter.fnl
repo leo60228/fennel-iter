@@ -41,9 +41,9 @@
 {:_DESCRIPTION "Tiny lazy iterator library for Fennel. This library defines an iterator as a function that takes a fixed argument and a state, and returns a new state and an element. This is a subset of what Fennel's `each` and Lua's `for` accept, and matches the return value of `ipairs`."
  :_LICENSE "MIT"
  :_VERSION "0.1.0"
- :collect collect
- :filter filter
- :first first
- :foldl foldl
- :head head
- :map map}
+ : collect
+ : filter
+ : first
+ : foldl
+ : head
+ : map}
