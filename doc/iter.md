@@ -1,23 +1,14 @@
-# Iter.fnl (0.1.0)
+# Iter.fnl (0.2.0)
 Tiny lazy iterator library for Fennel. This library defines an iterator as a function that takes a fixed argument and a state, and returns a new state and an element. This is a subset of what Fennel's `each` and Lua's `for` accept, and matches the return value of `ipairs`.
 
 **Table of contents**
 
-- [`collect`](#collect)
 - [`filter`](#filter)
 - [`first`](#first)
 - [`foldl`](#foldl)
 - [`head`](#head)
+- [`iterCollect`](#iterCollect)
 - [`map`](#map)
-
-## `collect`
-Function signature:
-
-```
-(collect iter inv control)
-```
-
-Eagerly evaluates an iterator to convert it to a table.
 
 ## `filter`
 Function signature:
@@ -54,6 +45,15 @@ Function signature:
 ```
 
 Get the first element from an iterator.
+
+## `iterCollect`
+Function signature:
+
+```
+(iterCollect iter inv control)
+```
+
+Eagerly evaluates an iterator to convert it to a table.
 
 ## `map`
 Function signature:

@@ -4,19 +4,19 @@
 
 (local iter (require "iter"))
 
-(deftest collect
+(deftest iterCollect
          (testing "collecting a table"
-                  (assert-eq (iter.collect (ipairs [ 10 20 30 ])) [ 10 20 30 ])))
+                  (assert-eq (iter.iterCollect (ipairs [ 10 20 30 ])) [ 10 20 30 ])))
 
 (deftest map
          (testing "basic map"
-                  (assert-eq (iter.collect (iter.map #(* $ 2) (ipairs [ 2 3 5 ]))) [ 4 6 10 ]))
+                  (assert-eq (iter.iterCollect (iter.map #(* $ 2) (ipairs [ 2 3 5 ]))) [ 4 6 10 ]))
          (testing "map with filter"
-                  (assert-eq (iter.collect (iter.map #(if (= $ 3) nil (+ $ 5)) (ipairs [ 2 3 4 ]))) [ 7 9 ])))
+                  (assert-eq (iter.iterCollect (iter.map #(if (= $ 3) nil (+ $ 5)) (ipairs [ 2 3 4 ]))) [ 7 9 ])))
 
 (deftest filter
          (testing "basic filter"
-                  (assert-eq (iter.collect (iter.filter #(not= (% $ 2) 0) (ipairs [ 1 2 3 2 1 ]))) [ 1 3 1 ])))
+                  (assert-eq (iter.iterCollect (iter.filter #(not= (% $ 2) 0) (ipairs [ 1 2 3 2 1 ]))) [ 1 3 1 ])))
 
 (deftest head
          (testing "head of ipairs"

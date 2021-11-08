@@ -25,7 +25,7 @@
   "Get the first element matching a predicate from an iterator. For example, to get the first element other than 2: `(first #(not= $ 2) iter)`"
   (head (filter pred iter inv control)))
 
-(fn collect [iter inv control]
+(fn iterCollect [iter inv control]
   "Eagerly evaluates an iterator to convert it to a table."
   (local tbl [])
   (each [control value (values iter inv control)]
@@ -40,8 +40,8 @@
 
 {:_DESCRIPTION "Tiny lazy iterator library for Fennel. This library defines an iterator as a function that takes a fixed argument and a state, and returns a new state and an element. This is a subset of what Fennel's `each` and Lua's `for` accept, and matches the return value of `ipairs`."
  :_LICENSE "MIT"
- :_VERSION "0.1.0"
- : collect
+ :_VERSION "0.2.0"
+ : iterCollect
  : filter
  : first
  : foldl
